@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 12:21:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/10 14:31:38 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/10 14:25:27 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/09/10 17:05:11 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
+# include <functional>
+
+# define nbZOMBIES 8
 
 class Zombie
 {
 private:
-	std::string name;
+	std::string name; //zombie name
+	static int _nZ; //number of created zombies.
+	int zindex; //zombie index
 public:
-	Zombie(std::string zombieName);
+	void createZombie(std::string zombieName); //constructor where name is set
+	Zombie(); //default constructor
 	void announce();
-	Zombie* newZombie(const std::string name);
-	void randomChump(std::string name);
+	Zombie* zombieHorde(int N, std::string name);
 	~Zombie();
 };
 

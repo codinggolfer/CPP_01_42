@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 12:21:58 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/10 14:31:38 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/10 14:34:28 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/09/10 17:03:30 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
+int Zombie::_nZ = 0;
+Zombie::Zombie(){
+	
+}
 
-class Zombie
+void Zombie::createZombie(std::string zombieName)
 {
-private:
-	std::string name;
-public:
-	Zombie(std::string zombieName);
-	void announce();
-	Zombie* newZombie(const std::string name);
-	void randomChump(std::string name);
-	~Zombie();
-};
+	name = zombieName;
+	++_nZ;
+	zindex = _nZ;
+	std::cout << name << " " << zindex <<" created" << std::endl;
+}
 
-#endif
+Zombie::~Zombie()
+{
+	std::cout << name << " " << zindex << " is shot in the head" << std::endl;
+}
