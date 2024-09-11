@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:31:13 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/10 18:04:51 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/11 11:03:39 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 # include "Weapon.hpp"
 
 
-class HumanA
+class HumanB
 {
 private:
-	Weapon _type;
-	std::string name;
+	std::string _name;
+	Weapon* _weapon;
 public:
-	HumanA(std::string name);
+	HumanB(std::string name);
+	HumanB();
 	void attack();
-	~HumanA();
+	void setWeapon(Weapon& weapon);
+	~HumanB();
 };
 
 #endif
