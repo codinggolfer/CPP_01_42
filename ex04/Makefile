@@ -1,8 +1,8 @@
 NAME	=	Sed
 
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror 
+CFLAGS	=	 -Wall -Wextra -Werror #-std=c++98
 
-FILES	=	main.cpp
+FILES	=	main.cpp Write.cpp
 
 CC		=	c++
 

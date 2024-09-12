@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:15:53 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/11 17:32:22 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:39:07 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ Write::Write(const std::string& sP, const std::string& s1, const std::string& s2
 
 void Write::replacer(std::string& content)
 {
-	int pos = 0;
+	size_t pos = 0;
 	
-	while  ((pos == _sourceStr.find(_sourceStr, pos) != std::string::npos))
+	while  ((pos = content.find(_sourceStr, pos)) != std::string::npos)
 	{
-		_resPath.erase(pos, str1.length());
-		newFile.insert(pos, str2);
-		pos += str2.length(); 
+		content.erase(pos, _sourceStr.length());
+		content.insert(pos, _replaceStr);
+		pos = _replaceStr.length(); 
 	}
 }
  
@@ -33,11 +33,11 @@ void Write::copyFiles()
 {
 	std::ifstream sourceFile(_sourcePath);
 	if (!sourceFile.is_open()){
-		std::cout << "Invalid sourcePath, can't open file " << getFile() << std::endl;
+		std::cout << "Invalid sourcePath, can't open file " << getPathFile() << std::endl;
 		return ;
 	}
 
-	std::string content((std::istreambuf_iterator<char>(sourceFile), std::istreambuf_iterator<char>()));
+	std::string content((std::istreambuf_iterator<char>(sourceFile)), std::istreambuf_iterator<char>());
 	
 	replacer(content); 
 	
@@ -50,7 +50,7 @@ void Write::copyFiles()
 	sourceFile.close();
 	
 	replaceFile << content;
-	
+	replaceFile.close();
 }
 
 std::string Write::getPathFile(){
@@ -64,3 +64,5 @@ std::string Write::getDestFile(){
 void Write::setPath(std::string name){
 	_destPath = name;
 }
+
+Write::~Write(){}

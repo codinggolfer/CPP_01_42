@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 13:11:54 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/11 17:14:10 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:09:02 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,8 @@ int main(int ac, char* av[])
 	
 	Write writer(av[1], av[2], av[3]);
 	
-	writer.fileToString();
+	writer.copyFiles();
 	
-	//fileToString(sourceStr, replaceStr, newFile);
-	
-	std::ofstream resFile("resFile.txt");
-	if (!resFile.is_open()){
-		std::cout << "Invalid resFile, can't open" << std::endl;
-		return 1;
-	}
-	
-	resFile << newFile;
-	resFile.close();
-		
 	return 0;
 }
 
