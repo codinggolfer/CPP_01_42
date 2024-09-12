@@ -1,6 +1,6 @@
 NAME	=	penta_kill
 
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror 
+CFLAGS	=	-Wall -Wextra -Werror 
 
 FILES	=	main.cpp HumanA.cpp  Weapon.cpp HumanB.cpp
 

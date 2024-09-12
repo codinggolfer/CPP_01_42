@@ -5,23 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 13:11:54 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/12 15:07:27 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/12 15:11:32 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/09/12 18:14:16 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Write.hpp"
+#include "Harl.hpp"
 
-int main(int ac, char* av[])
+
+int main()
 {
-	if (ac != 4){
-		std::cout << "invalid amount of arguments" << std::endl;
-		return 1;
-	}
-	
-	Write writer(av[1], av[2], av[3]);
-	
-	writer.copyFiles();
-	
+	Harl level;
+
+	level.complain("debug");
+	level.complain("info");
+	level.complain("error");
+	level.complain("warning");
+
+	std::cout << std::endl;
+	std::cout << "REVERSED WAY ============================ REVERSED WAY" << std::endl << std::endl;
+
+	level.complain("warning");
+	level.complain("error");
+	level.complain("info");
+	level.complain("debug");
+
 	return 0;
 }

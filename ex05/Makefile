@@ -1,8 +1,8 @@
-NAME	=	Zombies
+NAME	=	Harl
 
-CFLAGS	=	-Wall -Wextra -Werror 
+CFLAGS	=	 -Wall -Wextra -Werror
 
-FILES	=	newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
+FILES	=	main.cpp Harl.cpp
 
 CC		=	c++
 

@@ -1,6 +1,6 @@
 NAME	=	Sed
 
-CFLAGS	=	 -Wall -Wextra -Werror #-std=c++98
+CFLAGS	=	 -Wall -Wextra -Werror
 
 FILES	=	main.cpp Write.cpp
 

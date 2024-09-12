@@ -1,6 +1,6 @@
 NAME	=	zombieHorde
 
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror 
+CFLAGS	=	-Wall -Wextra -Werror 
 
 FILES	=	zombieHorde.cpp Zombie.cpp main.cpp
 

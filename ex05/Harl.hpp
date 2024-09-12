@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 13:11:54 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/12 15:07:27 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/12 15:11:55 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/09/12 17:48:03 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Write.hpp"
+#pragma once
 
-int main(int ac, char* av[])
+# include <iostream>
+
+
+class Harl
 {
-	if (ac != 4){
-		std::cout << "invalid amount of arguments" << std::endl;
-		return 1;
-	}
-	
-	Write writer(av[1], av[2], av[3]);
-	
-	writer.copyFiles();
-	
-	return 0;
-}
+private:
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
+public:
+	Harl();
+	void complain(std::string level);
+	~Harl();
+};
+
