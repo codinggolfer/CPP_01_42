@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:31:21 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/11 11:07:41 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/17 11:19:23 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void HumanB::attack()
 {
-	std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
+	if (_weapon)
+		std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
+	else
+		std::cout << _name << " attacks with their " << "nykeilla" << std::endl;
 }
 
 HumanB::HumanB(const std::string name)
 	: _name(name){
-		_weapon = 0;
+		_weapon = nullptr;
 	}
 
 void HumanB::setWeapon(Weapon& weapon)
